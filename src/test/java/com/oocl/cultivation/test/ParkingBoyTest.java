@@ -2,9 +2,9 @@ package com.oocl.cultivation.test;
 
 import org.junit.jupiter.api.Test;
 
-class ParkingBoyFacts {
+class ParkingBoyTest {
     @Test
-    void write_your_first_test() {
+    void should__when__given() {
 
     }
 }

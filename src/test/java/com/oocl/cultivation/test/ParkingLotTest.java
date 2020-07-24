@@ -3,8 +3,7 @@ package com.oocl.cultivation.test;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.locks.LockSupport;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ParkingLotTest {
@@ -30,4 +29,15 @@ public class ParkingLotTest {
         //then
         assertNotNull(car);
     }
+
+    @Test
+    void should_return_null_when_fetch_given_wrong_ticket(){
+        //give
+        ParkingLot parkingLot=new ParkingLot();
+        CarTicket carTicket=new CarTicket(new Car());
+        //when
+        Car car=parkingLot.fetch(carTicket);
+        assertEquals(null,car);
+    }
+
 }
