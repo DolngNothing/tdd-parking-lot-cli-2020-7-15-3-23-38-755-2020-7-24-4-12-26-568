@@ -34,10 +34,12 @@ public class ParkingLotTest {
     void should_return_null_when_fetch_given_wrong_ticket(){
         //give
         ParkingLot parkingLot=new ParkingLot();
-        CarTicket carTicket=new CarTicket(new Car());
+        CarTicket carTicket=new CarTicket();
         //when
         Car car=parkingLot.fetch(carTicket);
         assertEquals(null,car);
     }
+
+
 
 }
