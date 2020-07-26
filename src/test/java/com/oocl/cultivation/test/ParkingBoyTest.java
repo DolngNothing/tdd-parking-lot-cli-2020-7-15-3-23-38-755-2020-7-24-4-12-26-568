@@ -32,13 +32,15 @@ class ParkingBoyTest {
     void should_return_error_message_when_query_given_used_ticket() {
         //give
         ParkingLot parkingLot = new ParkingLot();
-        CarTicket carTicket = new CarTicket(new Car());
-        Car car = parkingLot.fetch(carTicket);
-        Car noCar = parkingLot.fetch(carTicket);
-        ParkingBoy parkingBoy=new ParkingBoy(parkingLot);
-        //when
 
+        ParkingBoy parkingBoy=new ParkingBoy(parkingLot);
+        CarTicket carTicket = parkingBoy.park(new Car());
+
+        Car car = parkingBoy.fetch(carTicket);
+        Car noCar = parkingBoy.fetch(carTicket);
+        //when
         String message=parkingBoy.queried(carTicket);
+        //then
         assertEquals("Unrecognized parking ticket.",message);
     }
 }

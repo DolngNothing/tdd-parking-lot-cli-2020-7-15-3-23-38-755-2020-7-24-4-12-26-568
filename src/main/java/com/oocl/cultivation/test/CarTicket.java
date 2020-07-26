@@ -3,7 +3,7 @@ package com.oocl.cultivation.test;
 public class CarTicket {
     private Car car;
 
-    private String ticketMessage;
+    private Boolean isUsed;
 
     public CarTicket(Car car) {
         this.car = car;
@@ -20,11 +20,11 @@ public class CarTicket {
         this.car = car;
     }
 
-    public String getTicketMessage() {
-        return ticketMessage;
+    public Boolean getUsed() {
+        return isUsed;
     }
 
-    public void setTicketMessage(String ticketMessage) {
-        this.ticketMessage = ticketMessage;
+    public void setUsed(Boolean used) {
+        isUsed = used;
     }
 }

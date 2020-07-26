@@ -28,6 +28,7 @@ public class ParkingLot {
     public Car fetch(CarTicket carTicket) {
         if (carTickets.contains(carTicket)) {
             carTickets.remove(carTicket);
+            carTicket.setUsed(true);
             return carTicket.getCar();
         }
         return null;

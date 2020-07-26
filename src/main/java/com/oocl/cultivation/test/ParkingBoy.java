@@ -18,6 +18,7 @@ public class ParkingBoy {
     }
 
     public String queried(CarTicket carTicket){
+        if(carTicket.getUsed()) return "Unrecognized parking ticket.";
         return null;
     }
 
