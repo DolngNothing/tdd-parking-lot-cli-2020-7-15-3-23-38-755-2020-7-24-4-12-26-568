@@ -9,8 +9,10 @@ public class ParkingBoy {
         this.parkingLot = parkingLot;
     }
 
-    public CarTicket park(Car car) {
-        return parkingLot.park(car);
+    public ParkResult park(Car car) {
+        CarTicket carTicket = parkingLot.park(car);
+        ParkResult parkResult=new ParkResult(carTicket,carTicket==null ? "Not enough position." : null);
+        return parkResult;
     }
 
     public String fetch(CarTicket carTicket) {
