@@ -17,4 +17,8 @@ public class ParkingBoy {
         return parkingLot.fetch(carTicket);
     }
 
+    public String queried(CarTicket carTicket){
+        return null;
+    }
+
 }
