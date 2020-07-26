@@ -7,13 +7,6 @@ public class SuperSmartParkingBoy extends SmartParkingBoy{
         super(parkingLots);
     }
 
-    public ParkResult park(Car car) {
-        CarTicket carTicket = null;
-        ParkingLot parkingLotWithMostEmptyPosition = findLotWithMostEmptyPosition(parkingLots);
-        carTicket = parkingLotWithMostEmptyPosition.park(car);
-        return new ParkResult(carTicket, carTicket == null ? "Not enough position." : null);
-    }
-
     public ParkingLot findLotWithMostEmptyPosition(List<ParkingLot> parkingLots){
         Double mostemptyRateValue=0.0;
         int mostEmptyRateIndex=0;
@@ -21,8 +14,7 @@ public class SuperSmartParkingBoy extends SmartParkingBoy{
         int emptyValue=0;
         for(int index=0;index<parkingLots.size();index++){
             emptyValue=parkingLots.get(index).getCapacity()-parkingLots.get(index).getCarTickets().size();
-
-
+            emptyRateValue= (double) (emptyValue / parkingLots.get(index).getCapacity());
             if(emptyRateValue>mostemptyRateValue){
                 mostEmptyRateIndex=index;
                 mostemptyRateValue=emptyRateValue;
