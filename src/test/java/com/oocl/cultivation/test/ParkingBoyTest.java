@@ -39,8 +39,8 @@ class ParkingBoyTest {
         ParkingLot parkingLot = new ParkingLot();
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
         //when
-        String message = parkingBoy.fetch(null);
-        assertEquals("Please provide your parking ticket.",message);
+        FetchResult fetchResult = parkingBoy.fetch(null);
+        assertEquals("Please provide your parking ticket.",fetchResult.getMessage());
     }
 
     @Test
