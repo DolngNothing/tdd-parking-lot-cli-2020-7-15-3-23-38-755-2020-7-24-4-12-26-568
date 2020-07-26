@@ -3,9 +3,7 @@ package com.oocl.cultivation.test;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ParkingLotTest {
 
@@ -74,7 +72,7 @@ public class ParkingLotTest {
     void should_return_null_ticket_when_fetch_given_over_capacity() {
         //give
         ParkingLot parkingLot = new ParkingLot();
-        for(int i=0;i<10;i++){
+        for (int i = 0; i < 10; i++) {
             parkingLot.park(new Car());
         }
         //when

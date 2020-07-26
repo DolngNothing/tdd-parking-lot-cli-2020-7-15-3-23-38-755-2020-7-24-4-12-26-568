@@ -15,11 +15,11 @@ public class ParkingLot {
     }
 
     public ParkingLot() {
-        this.capacity=10;
+        this.capacity = 10;
     }
 
     public CarTicket park(Car car) {
-        if(carTickets.size()>=this.capacity) return null;
+        if (carTickets.size() >= this.capacity) return null;
         CarTicket carTicket = new CarTicket(car);
         carTickets.add(carTicket);
         return carTicket;
