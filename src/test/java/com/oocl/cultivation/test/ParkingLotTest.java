@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class ParkingLotTest {
 
@@ -67,6 +68,19 @@ public class ParkingLotTest {
         Car car2 = parkingLot.fetch(porscheTicket);
         assertEquals(ferrari, car1);
         assertEquals(porsche, car2);
+    }
+
+    @Test
+    void should_return_null_ticket_when_fetch_given_over_capacity() {
+        //give
+        ParkingLot parkingLot = new ParkingLot();
+        for(int i=0;i<10;i++){
+            parkingLot.park(new Car());
+        }
+        //when
+        CarTicket carTicket = parkingLot.park(new Car());
+        //then
+        assertNull(carTicket);
     }
 
 }
