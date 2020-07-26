@@ -23,6 +23,22 @@ class ParkingBoyTest {
     }
 
     @Test
+    void should_return_car_when_fetch_given_carTicket() {
+        //give
+        ArrayList<ParkingLot> parkingLots = new ArrayList<>();
+        parkingLots.add(new ParkingLot());
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
+
+        Car parkedCar = new Car();
+        CarTicket carTicket = new CarTicket(parkedCar);
+        ParkResult parkResult = parkingBoy.park(parkedCar);
+        //when
+        FetchResult fetchResult = parkingBoy.fetch(parkResult.getCarTicket());
+        //then
+        assertNotNull(fetchResult.getCar());
+    }
+
+    @Test
     void should_return_error_message_when_query_given_used_ticket() {
         //give
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
@@ -49,7 +65,7 @@ class ParkingBoyTest {
     }
 
     @Test
-    void should_return_error_message_when_fetch_given_over_capacity() {
+    void should_return_error_message_when_park_given_over_capacity() {
         //give
         ArrayList<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(new ParkingLot());
@@ -64,7 +80,7 @@ class ParkingBoyTest {
     }
 
     @Test
-    void should_return_right_ticket_when_fetch_given_over_one_capacity() {
+    void should_return_right_ticket_when_park_given_over_one_capacity() {
         //give
         List<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(new ParkingLot());

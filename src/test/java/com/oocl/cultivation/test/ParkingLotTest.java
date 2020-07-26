@@ -69,7 +69,7 @@ class ParkingLotTest {
     }
 
     @Test
-    void should_return_null_ticket_when_fetch_given_over_capacity() {
+    void should_return_null_ticket_when_park_given_over_capacity() {
         //give
         ParkingLot parkingLot = new ParkingLot();
         for (int i = 0; i < 10; i++) {
