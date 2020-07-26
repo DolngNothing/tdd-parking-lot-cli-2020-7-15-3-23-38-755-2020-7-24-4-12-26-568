@@ -42,6 +42,9 @@ public class ParkingLot {
         this.carTickets = carTickets;
     }
 
+    public Integer getCapacity() {
+        return capacity;
+    }
 }
 
 
