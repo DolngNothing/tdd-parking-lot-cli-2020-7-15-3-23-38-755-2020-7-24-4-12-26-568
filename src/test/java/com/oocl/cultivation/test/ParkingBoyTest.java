@@ -94,4 +94,22 @@ class ParkingBoyTest {
         //then
         assertNotNull(parkResult.getCarTicket());
     }
+
+    @Test
+    void should_return_right_car_when_fetch_given_over_one_capacity() {
+        //give
+        List<ParkingLot> parkingLots = new ArrayList<>();
+        parkingLots.add(new ParkingLot());
+        parkingLots.add(new ParkingLot());
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
+        for (int i = 0; i < 10; i++) {
+            parkingBoy.park(new Car());
+        }
+        Car porsche=new Car();
+        ParkResult parkResult = parkingBoy.park(porsche);
+        //when
+        FetchResult fetchResult = parkingBoy.fetch(parkResult.getCarTicket());
+        //then
+        assertNotNull(fetchResult.getCar());
+    }
 }
