@@ -14,7 +14,7 @@ public class ParkingBoy {
     }
 
     public String fetch(CarTicket carTicket) {
-        parkingLot.fetch(carTicket);
+        if(parkingLot.fetch(carTicket)==null) return "Please provide your parking ticket.";
         return null;
     }
 
