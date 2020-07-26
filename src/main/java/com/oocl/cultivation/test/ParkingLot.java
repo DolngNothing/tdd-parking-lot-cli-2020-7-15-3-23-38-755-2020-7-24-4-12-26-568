@@ -33,6 +33,15 @@ public class ParkingLot {
         }
         return null;
     }
+
+    public List<CarTicket> getCarTickets() {
+        return carTickets;
+    }
+
+    public void setCarTickets(List<CarTicket> carTickets) {
+        this.carTickets = carTickets;
+    }
+
 }
 
 
