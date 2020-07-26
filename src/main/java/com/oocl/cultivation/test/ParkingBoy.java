@@ -1,23 +1,29 @@
 package com.oocl.cultivation.test;
 
 
+import java.util.List;
+
 public class ParkingBoy {
 
-    private ParkingLot parkingLot;
+    private List<ParkingLot> parkingLots;
 
-    public ParkingBoy(ParkingLot parkingLot) {
-        this.parkingLot = parkingLot;
+    public ParkingBoy(List<ParkingLot> parkingLots) {
+        this.parkingLots = parkingLots;
     }
 
     public ParkResult park(Car car) {
-        CarTicket carTicket = parkingLot.park(car);
+        CarTicket carTicket = null;
+        for(ParkingLot parkingLot:parkingLots){
+            carTicket = parkingLot.park(car);
+            if(carTicket!=null) break;
+        }
         ParkResult parkResult=new ParkResult(carTicket,carTicket==null ? "Not enough position." : null);
         return parkResult;
     }
 
     public FetchResult fetch(CarTicket carTicket) {
         if(carTicket==null) return new FetchResult(null,"Please provide your parking ticket.");
-        Car car = parkingLot.fetch(carTicket);
+        Car car = parkingLots.get(0).fetch(carTicket);
         return new FetchResult(car,null);
     }
 
