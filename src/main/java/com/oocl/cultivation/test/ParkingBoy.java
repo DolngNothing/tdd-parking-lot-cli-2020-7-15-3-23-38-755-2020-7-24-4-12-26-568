@@ -13,8 +13,9 @@ public class ParkingBoy {
         return parkingLot.park(car);
     }
 
-    public Car fetch(CarTicket carTicket) {
-        return parkingLot.fetch(carTicket);
+    public String fetch(CarTicket carTicket) {
+        parkingLot.fetch(carTicket);
+        return null;
     }
 
     public String queried(CarTicket carTicket){

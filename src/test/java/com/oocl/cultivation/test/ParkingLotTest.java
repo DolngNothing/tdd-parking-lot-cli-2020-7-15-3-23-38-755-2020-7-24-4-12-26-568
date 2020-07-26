@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ParkingLotTest {
+class ParkingLotTest {
 
     @Test
     void should_return_ticket_when_park_given_car() {
@@ -38,7 +38,7 @@ public class ParkingLotTest {
         CarTicket carTicket = new CarTicket();
         //when
         Car car = parkingLot.fetch(carTicket);
-        assertEquals(null, car);
+        assertNull(car);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class ParkingLotTest {
         //when
         Car car = parkingLot.fetch(carTicket);
         Car noCar = parkingLot.fetch(carTicket);
-        assertEquals(null, noCar);
+        assertNull(noCar);
     }
 
     @Test
