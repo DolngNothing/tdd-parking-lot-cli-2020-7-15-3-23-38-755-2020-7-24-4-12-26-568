@@ -13,22 +13,21 @@ public class ParkingBoy {
 
     public ParkResult park(Car car) {
         CarTicket carTicket = null;
-        for(ParkingLot parkingLot:parkingLots){
+        for (ParkingLot parkingLot : parkingLots) {
             carTicket = parkingLot.park(car);
-            if(carTicket!=null) break;
+            if (carTicket != null) break;
         }
-        ParkResult parkResult=new ParkResult(carTicket,carTicket==null ? "Not enough position." : null);
-        return parkResult;
+        return new ParkResult(carTicket, carTicket == null ? "Not enough position." : null);
     }
 
     public FetchResult fetch(CarTicket carTicket) {
-        if(carTicket==null) return new FetchResult(null,"Please provide your parking ticket.");
+        if (carTicket == null) return new FetchResult(null, "Please provide your parking ticket.");
         Car car = parkingLots.get(0).fetch(carTicket);
-        return new FetchResult(car,null);
+        return new FetchResult(car, null);
     }
 
-    public String queried(CarTicket carTicket){
-        if(carTicket.getUsed()) return "Unrecognized parking ticket.";
+    public String queried(CarTicket carTicket) {
+        if (carTicket.getUsed()) return "Unrecognized parking ticket.";
         return null;
     }
 

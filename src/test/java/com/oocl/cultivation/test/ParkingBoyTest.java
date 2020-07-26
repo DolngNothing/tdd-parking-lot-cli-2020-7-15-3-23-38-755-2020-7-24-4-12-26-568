@@ -7,7 +7,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ParkingBoyTest {
     @Test
@@ -33,9 +32,9 @@ class ParkingBoyTest {
         parkingBoy.fetch(parkResult.getCarTicket());
         parkingBoy.fetch(parkResult.getCarTicket());
         //when
-        String message=parkingBoy.queried(parkResult.getCarTicket());
+        String message = parkingBoy.queried(parkResult.getCarTicket());
         //then
-        assertEquals("Unrecognized parking ticket.",message);
+        assertEquals("Unrecognized parking ticket.", message);
     }
 
     @Test
@@ -46,7 +45,7 @@ class ParkingBoyTest {
         ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
         //when
         FetchResult fetchResult = parkingBoy.fetch(null);
-        assertEquals("Please provide your parking ticket.",fetchResult.getMessage());
+        assertEquals("Please provide your parking ticket.", fetchResult.getMessage());
     }
 
     @Test
@@ -61,16 +60,16 @@ class ParkingBoyTest {
         //when
         ParkResult parkResult = parkingBoy.park(new Car());
         //then
-        assertEquals("Not enough position.",parkResult.getMessage());
+        assertEquals("Not enough position.", parkResult.getMessage());
     }
 
     @Test
     void should_return_right_ticket_when_fetch_given_over_one_capacity() {
         //give
-        List<ParkingLot> parkingLots=new ArrayList<>();
+        List<ParkingLot> parkingLots = new ArrayList<>();
         parkingLots.add(new ParkingLot());
         parkingLots.add(new ParkingLot());
-        ParkingBoy parkingBoy= new ParkingBoy(parkingLots);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
         for (int i = 0; i < 10; i++) {
             parkingBoy.park(new Car());
         }
@@ -79,5 +78,4 @@ class ParkingBoyTest {
         //then
         assertNotNull(parkResult.getCarTicket());
     }
-
 }
