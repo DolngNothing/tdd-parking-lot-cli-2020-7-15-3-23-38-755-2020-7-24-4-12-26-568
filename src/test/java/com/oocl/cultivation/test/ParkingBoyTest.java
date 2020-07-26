@@ -105,7 +105,7 @@ class ParkingBoyTest {
         for (int i = 0; i < 10; i++) {
             parkingBoy.park(new Car());
         }
-        Car porsche=new Car();
+        Car porsche = new Car();
         ParkResult parkResult = parkingBoy.park(porsche);
         //when
         FetchResult fetchResult = parkingBoy.fetch(parkResult.getCarTicket());

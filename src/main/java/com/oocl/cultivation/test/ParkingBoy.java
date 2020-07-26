@@ -22,10 +22,10 @@ public class ParkingBoy {
 
     public FetchResult fetch(CarTicket carTicket) {
         if (carTicket == null) return new FetchResult(null, "Please provide your parking ticket.");
-        Car car=null;
-        for(ParkingLot parkingLot:parkingLots){
-            if(parkingLot.getCarTickets().contains(carTicket)){
-               car = parkingLot.fetch(carTicket);
+        Car car = null;
+        for (ParkingLot parkingLot : parkingLots) {
+            if (parkingLot.getCarTickets().contains(carTicket)) {
+                car = parkingLot.fetch(carTicket);
             }
         }
         return new FetchResult(car, null);
