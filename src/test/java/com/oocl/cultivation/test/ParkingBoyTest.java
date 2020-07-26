@@ -77,7 +77,7 @@ class ParkingBoyTest {
         //when
         ParkResult parkResult = parkingBoy.park(new Car());
         //then
-        assertEquals("Not enough position.",parkResult.getMessage());
+        assertNotNull(parkResult.getCarTicket());
     }
 
 }
