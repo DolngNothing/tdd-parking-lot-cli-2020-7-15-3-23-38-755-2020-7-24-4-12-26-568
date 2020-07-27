@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class ParkingBoyTest {
 
     private static final String UNRECOGNIZED_PARKING_TICKET = "Unrecognized parking ticket.";
+    private static final String PLEASE_PROVIDE_YOUR_PARKING_TICKET = "Please provide your parking ticket.";
 
     @Test
     void should_return_ticket_when_park_given_car() {
@@ -63,7 +64,7 @@ class ParkingBoyTest {
         ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
         //when
         FetchResult fetchResult = parkingBoy.fetch(null);
-        assertEquals("Please provide your parking ticket.", fetchResult.getMessage());
+        assertEquals(PLEASE_PROVIDE_YOUR_PARKING_TICKET, fetchResult.getMessage());
     }
 
     @Test
