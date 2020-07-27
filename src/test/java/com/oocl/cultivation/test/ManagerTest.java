@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ManagerTest {
+class ManagerTest {
     @Test
     void should_return_true_when_park_given_cars() {
         List<ParkingLot> parkingLots=new ArrayList<>();
@@ -26,6 +27,6 @@ public class ManagerTest {
         ParkResult bmwResult = superSmartParkingBoy.park(bmw);
 
         //then
-        assertEquals(true, ((ParkingLot) (parkingLots.get(1))).getCarTicketCarMap().equals(bmwResult.getCarTicket()));
+        assertEquals(((ParkingLot) (parkingLots.get(1))).getCarTicketCarMap().get(bmwResult.getCarTicket()), bmw);
     }
 }
