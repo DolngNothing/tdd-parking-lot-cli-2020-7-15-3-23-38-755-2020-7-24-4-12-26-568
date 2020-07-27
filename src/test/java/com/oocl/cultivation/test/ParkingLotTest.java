@@ -23,8 +23,7 @@ class ParkingLotTest {
         //give
         ParkingLot parkingLot = new ParkingLot();
         Car parkedCar = new Car();
-        CarTicket carTicket = new CarTicket(parkedCar);
-        carTicket = parkingLot.park(parkedCar);
+        CarTicket carTicket = parkingLot.park(parkedCar);
         //when
         Car car = parkingLot.fetch(carTicket);
         //then
@@ -45,7 +44,8 @@ class ParkingLotTest {
     void should_return_null_when_fetch_given_used_ticket() {
         //give
         ParkingLot parkingLot = new ParkingLot();
-        CarTicket carTicket = new CarTicket(new Car());
+        CarTicket carTicket = new CarTicket();
+
         //when
         Car car = parkingLot.fetch(carTicket);
         Car noCar = parkingLot.fetch(carTicket);
