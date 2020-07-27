@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class ParkingBoyTest {
+
+    private static final String UNRECOGNIZED_PARKING_TICKET = "Unrecognized parking ticket.";
+
     @Test
     void should_return_ticket_when_park_given_car() {
         //give
@@ -49,7 +52,7 @@ class ParkingBoyTest {
         //when
         String message = parkingBoy.query(fetchResult);
         //then
-        assertEquals("Unrecognized parking ticket.", message);
+        assertEquals(UNRECOGNIZED_PARKING_TICKET, message);
     }
 
     @Test
