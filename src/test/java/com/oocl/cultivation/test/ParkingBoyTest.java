@@ -29,8 +29,8 @@ class ParkingBoyTest {
         parkingLots.add(new ParkingLot());
         ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
 
-        Car parkedCar = new Car();
-        ParkResult parkResult = parkingBoy.park(parkedCar);
+        Car car = new Car();
+        ParkResult parkResult = parkingBoy.park(car);
         //when
         FetchResult fetchResult = parkingBoy.fetch(parkResult.getCarTicket());
         //then
