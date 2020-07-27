@@ -27,7 +27,7 @@ class ParkingLotTest {
         //when
         Car car = parkingLot.fetch(carTicket);
         //then
-        assertEquals(parkedCar,car);
+        assertEquals(parkedCar, car);
     }
 
     @Test

@@ -1,14 +1,12 @@
 package com.oocl.cultivation.test;
 
 
-
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class ParkingLot{
+public class ParkingLot {
 
-    private final Map<CarTicket,Car> carTicketCarMap = new HashMap<>();
+    private final Map<CarTicket, Car> carTicketCarMap = new HashMap<>();
 
     private Integer capacity;
 
@@ -23,7 +21,7 @@ public class ParkingLot{
     public CarTicket park(Car car) {
         if (carTicketCarMap.size() >= this.capacity) return null;
         CarTicket carTicket = new CarTicket();
-        carTicketCarMap.put(carTicket,car);
+        carTicketCarMap.put(carTicket, car);
         return carTicket;
     }
 
@@ -39,11 +37,11 @@ public class ParkingLot{
         return capacity;
     }
 
-    public Integer getEmptyPostion(){
+    public Integer getEmptyPostion() {
         return getCapacity() - getCarTicketCarMap().size();
     }
 
-    public Double getEmptyRate(){
+    public Double getEmptyRate() {
         return (double) (getEmptyPostion() / getCapacity());
     }
 }

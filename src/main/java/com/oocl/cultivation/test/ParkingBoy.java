@@ -1,7 +1,6 @@
 package com.oocl.cultivation.test;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingBoy implements ParkingStrategy {
@@ -33,11 +32,11 @@ public class ParkingBoy implements ParkingStrategy {
         if (carTicket == null) return new FetchResult(null, PLEASE_PROVIDE_YOUR_PARKING_TICKET);
         Car car = null;
         for (ParkingLot parkingLot : parkingLots) {
-            if (parkingLot.getCarTicketCarMap().get(carTicket)!=null) {
+            if (parkingLot.getCarTicketCarMap().get(carTicket) != null) {
                 car = parkingLot.fetch(carTicket);
             }
         }
-        return new FetchResult(car, car == null ? UNRECOGNIZED_PARKING_TICKET :null);
+        return new FetchResult(car, car == null ? UNRECOGNIZED_PARKING_TICKET : null);
     }
 
     public String query(FetchResult fetchResult) {
