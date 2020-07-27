@@ -22,7 +22,7 @@ public class SmartParkingBoyTest {
 
 
         //when
-        ParkResult ferrariTicketResult = smartParkingBoy.park(ferrari);
+        smartParkingBoy.park(ferrari);
         ParkResult porscheTicketResult = smartParkingBoy.park(porsche);
 
 
