@@ -27,7 +27,7 @@ public class SmartParkingBoyTest {
 
 
         //then
-        assertEquals(true, ((ParkingLot) (parkingLots.get(1))).getCarTicketCarMap().equals(porscheTicketResult.getCarTicket()));
+        assertEquals(true, ((ParkingLot) (parkingLots.get(1))).getCarTicketCarMap().get(porscheTicketResult.getCarTicket())!=null);
     }
 
 }
