@@ -1,12 +1,14 @@
 package com.oocl.cultivation.test;
 
 
-import java.util.ArrayList;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ParkingLot{
 
-    private final List<CarTicket> carTickets = new ArrayList<CarTicket>();
+    private final Map<CarTicket,Car> carTicketCarMap = new HashMap<>();
 
     private Integer capacity;
 
@@ -19,23 +21,19 @@ public class ParkingLot{
     }
 
     public CarTicket park(Car car) {
-        if (carTickets.size() >= this.capacity) return null;
-        CarTicket carTicket = new CarTicket(car);
-        carTickets.add(carTicket);
+        if (carTicketCarMap.size() >= this.capacity) return null;
+        CarTicket carTicket = new CarTicket();
+        carTicketCarMap.put(carTicket,car);
         return carTicket;
     }
 
     public Car fetch(CarTicket carTicket) {
-        if (carTickets.contains(carTicket)) {
-            carTickets.remove(carTicket);
-            carTicket.setUsed(true);
-            return carTicket.getCar();
+        Car car = carTicketCarMap.get(carTicket);
+        if (car!=null) {
+            carTicketCarMap.remove(carTicket);
+            return car;
         }
         return null;
-    }
-
-    public List<CarTicket> getCarTickets() {
-        return carTickets;
     }
 
     public Integer getCapacity() {
