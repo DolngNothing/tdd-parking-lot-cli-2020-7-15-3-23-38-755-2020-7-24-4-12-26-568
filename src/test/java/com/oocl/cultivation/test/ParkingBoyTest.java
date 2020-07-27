@@ -30,7 +30,6 @@ class ParkingBoyTest {
         ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
 
         Car parkedCar = new Car();
-        CarTicket carTicket = new CarTicket(parkedCar);
         ParkResult parkResult = parkingBoy.park(parkedCar);
         //when
         FetchResult fetchResult = parkingBoy.fetch(parkResult.getCarTicket());
