@@ -37,7 +37,7 @@ public class ParkingBoy implements ParkingStrategy {
         return new FetchResult(car, null);
     }
 // todo
-    public String queried(CarTicket carTicket) {
+    public String query(CarTicket carTicket) {
         if (carTicket.getUsed()) return "Unrecognized parking ticket.";
         return null;
     }
