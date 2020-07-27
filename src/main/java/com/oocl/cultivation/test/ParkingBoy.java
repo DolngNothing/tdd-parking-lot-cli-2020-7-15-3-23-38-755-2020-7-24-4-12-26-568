@@ -6,6 +6,7 @@ import java.util.List;
 
 public class ParkingBoy implements ParkingStrategy {
 
+    public static final String NOT_ENOUGH_POSITION = "Not enough position.";
     protected List<ParkingLot> parkingLots;
 
     public ParkingBoy(List<ParkingLot> parkingLots) {
@@ -22,7 +23,7 @@ public class ParkingBoy implements ParkingStrategy {
             carTicket = parkingLot.park(car);
             if (carTicket != null) break;
         }
-        return new ParkResult(carTicket, carTicket == null ? "Not enough position." : null);
+        return new ParkResult(carTicket, carTicket == null ? NOT_ENOUGH_POSITION : null);
     }
 
 
@@ -36,7 +37,7 @@ public class ParkingBoy implements ParkingStrategy {
         }
         return new FetchResult(car, car == null ? "Unrecognized parking ticket.":null);
     }
-// todo
+
     public String query(FetchResult fetchResult) {
         return fetchResult.getMessage();
     }
