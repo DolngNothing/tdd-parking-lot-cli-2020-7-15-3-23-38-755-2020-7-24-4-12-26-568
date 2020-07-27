@@ -45,9 +45,9 @@ class ParkingBoyTest {
         ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
         ParkResult parkResult = parkingBoy.park(new Car());
         parkingBoy.fetch(parkResult.getCarTicket());
-        parkingBoy.fetch(parkResult.getCarTicket());
+        FetchResult fetchResult = parkingBoy.fetch(parkResult.getCarTicket());
         //when
-        String message = parkingBoy.query(parkResult.getCarTicket());
+        String message = parkingBoy.query(fetchResult);
         //then
         assertEquals("Unrecognized parking ticket.", message);
     }

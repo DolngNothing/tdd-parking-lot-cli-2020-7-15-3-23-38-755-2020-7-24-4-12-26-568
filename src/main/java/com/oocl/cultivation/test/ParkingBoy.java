@@ -34,27 +34,10 @@ public class ParkingBoy implements ParkingStrategy {
                 car = parkingLot.fetch(carTicket);
             }
         }
-        return new FetchResult(car, null);
+        return new FetchResult(car, car == null ? "Unrecognized parking ticket.":null);
     }
 // todo
-    public String query(CarTicket carTicket) {
-        if (carTicket.getUsed()) return "Unrecognized parking ticket.";
-        return null;
+    public String query(FetchResult fetchResult) {
+        return fetchResult.getMessage();
     }
-
-    public static void main(String[] args) {
-        //give
-        ArrayList<ParkingLot> parkingLots = new ArrayList<>();
-        parkingLots.add(new ParkingLot());
-        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
-
-        Car car = new Car();
-        ParkResult parkResult = parkingBoy.park(car);
-        System.out.println(parkResult.getCarTicket());
-        //when
-        FetchResult fetchResult = parkingBoy.fetch(parkResult.getCarTicket());
-
-        System.out.println(fetchResult.getCar());
-    }
-
 }
