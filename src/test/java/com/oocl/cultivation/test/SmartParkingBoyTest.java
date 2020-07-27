@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SmartParkingBoyTest {
     @Test
@@ -27,7 +27,7 @@ public class SmartParkingBoyTest {
 
 
         //then
-        assertEquals(true, ((ParkingLot) (parkingLots.get(1))).getCarTicketCarMap().get(porscheTicketResult.getCarTicket())!=null);
+        assertNotNull(((ParkingLot) (parkingLots.get(1))).getCarTicketCarMap().get(porscheTicketResult.getCarTicket()));
     }
 
 }
