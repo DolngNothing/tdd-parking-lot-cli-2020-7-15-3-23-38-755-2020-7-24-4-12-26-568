@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SmartParkingBoyTest {
+class SmartParkingBoyTest {
     @Test
     void should_return_true_when_park_given_two_cars() {
         //give
