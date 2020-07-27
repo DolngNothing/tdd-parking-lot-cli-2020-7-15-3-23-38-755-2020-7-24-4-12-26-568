@@ -1,6 +1,9 @@
 package com.oocl.cultivation.test;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SuperSmartParkingBoy extends SmartParkingBoy {
     public SuperSmartParkingBoy(List<ParkingLot> parkingLots) {
@@ -8,18 +11,8 @@ public class SuperSmartParkingBoy extends SmartParkingBoy {
     }
 
     public ParkingLot findLotWithMostEmptyPosition(List<ParkingLot> parkingLots) {
-        double mostemptyRateValue = 0.0;
-        int mostEmptyRateIndex = 0;
-        double emptyRateValue = 0.0;
-        int emptyValue = 0;
-        for (int index = 0; index < parkingLots.size(); index++) {
-            emptyValue = parkingLots.get(index).getEmptyPostion();
-            emptyRateValue = (double) (emptyValue / parkingLots.get(index).getCapacity());
-            if (emptyRateValue > mostemptyRateValue) {
-                mostEmptyRateIndex = index;
-                mostemptyRateValue = emptyRateValue;
-            }
-        }
-        return parkingLots.get(mostEmptyRateIndex);
+        List<ParkingLot> sortParkingLots = new ArrayList<>(parkingLots);
+        sortParkingLots = sortParkingLots.stream().sorted(Comparator.comparing(ParkingLot::getEmptyRate).reversed()).collect(Collectors.toList());
+        return sortParkingLots.get(0);
     }
 }
