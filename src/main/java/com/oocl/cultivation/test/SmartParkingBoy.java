@@ -20,7 +20,7 @@ public class SmartParkingBoy extends ParkingBoy {
         int emptyValue = 0;
 
         for (int index = 0; index < parkingLots.size(); index++) {
-            emptyValue = parkingLots.get(index).getCapacity() - parkingLots.get(index).getCarTickets().size();
+            emptyValue = parkingLots.get(index).getCapacity() - parkingLots.get(index).getCarTicketCarMap().size();
             if (emptyValue > mostEmptyValue) {
                 mostEmptyIndex = index;
                 mostEmptyValue = emptyValue;

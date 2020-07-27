@@ -27,6 +27,6 @@ public class SuperSmartParkingBoyTest {
         ParkResult bmwResult = superSmartParkingBoy.park(bmw);
 
         //then
-        assertEquals(true, ((ParkingLot) (parkingLots.get(1))).getCarTickets().contains(bmwResult.getCarTicket()));
+        assertEquals(true, ((ParkingLot) (parkingLots.get(1))).getCarTicketCarMap().equals(bmwResult.getCarTicket()));
     }
 }

@@ -36,6 +36,10 @@ public class ParkingLot{
         return null;
     }
 
+    public Map<CarTicket, Car> getCarTicketCarMap() {
+        return carTicketCarMap;
+    }
+
     public Integer getCapacity() {
         return capacity;
     }

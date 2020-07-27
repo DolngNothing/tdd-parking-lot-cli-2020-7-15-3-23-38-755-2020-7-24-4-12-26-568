@@ -29,7 +29,7 @@ public class ParkingBoy implements ParkingStrategy {
         if (carTicket == null) return new FetchResult(null, "Please provide your parking ticket.");
         Car car = null;
         for (ParkingLot parkingLot : parkingLots) {
-            if (parkingLot.getCarTickets().contains(carTicket)) {
+            if (parkingLot.getCarTicketCarMap().equals(carTicket)) {
                 car = parkingLot.fetch(carTicket);
             }
         }
