@@ -12,6 +12,7 @@ class ParkingBoyTest {
 
     private static final String UNRECOGNIZED_PARKING_TICKET = "Unrecognized parking ticket.";
     private static final String PLEASE_PROVIDE_YOUR_PARKING_TICKET = "Please provide your parking ticket.";
+    private static final String NOT_ENOUGH_POSITION = "Not enough position.";
 
     @Test
     void should_return_ticket_when_park_given_car() {
@@ -79,7 +80,7 @@ class ParkingBoyTest {
         //when
         ParkResult parkResult = parkingBoy.park(new Car());
         //then
-        assertEquals("Not enough position.", parkResult.getMessage());
+        assertEquals(NOT_ENOUGH_POSITION, parkResult.getMessage());
     }
 
     @Test
