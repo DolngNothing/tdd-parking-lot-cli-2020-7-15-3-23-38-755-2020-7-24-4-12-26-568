@@ -38,6 +38,10 @@ public class ParkingLot{
     public Integer getCapacity() {
         return capacity;
     }
+
+    public Integer getEmptyPostion(){
+        return getCapacity() - getCarTicketCarMap().size();
+    }
 }
 
 

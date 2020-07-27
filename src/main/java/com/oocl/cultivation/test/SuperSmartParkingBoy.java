@@ -13,8 +13,7 @@ public class SuperSmartParkingBoy extends SmartParkingBoy {
         double emptyRateValue = 0.0;
         int emptyValue = 0;
         for (int index = 0; index < parkingLots.size(); index++) {
-            //todo  into lot
-            emptyValue = parkingLots.get(index).getCapacity() - parkingLots.get(index).getCarTicketCarMap().size();
+            emptyValue = parkingLots.get(index).getEmptyPostion();
             emptyRateValue = (double) (emptyValue / parkingLots.get(index).getCapacity());
             if (emptyRateValue > mostemptyRateValue) {
                 mostEmptyRateIndex = index;
