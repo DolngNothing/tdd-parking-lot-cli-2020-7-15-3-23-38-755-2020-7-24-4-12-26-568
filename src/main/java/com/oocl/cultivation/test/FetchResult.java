@@ -4,9 +4,6 @@ public class FetchResult {
     private Car car;
     private String message;
 
-    public FetchResult() {
-    }
-
     public FetchResult(Car car, String message) {
         this.car = car;
         this.message = message;
@@ -24,7 +21,4 @@ public class FetchResult {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }

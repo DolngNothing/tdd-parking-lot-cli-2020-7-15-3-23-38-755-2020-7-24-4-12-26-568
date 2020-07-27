@@ -8,11 +8,12 @@ public class SuperSmartParkingBoy extends SmartParkingBoy {
     }
 
     public ParkingLot findLotWithMostEmptyPosition(List<ParkingLot> parkingLots) {
-        Double mostemptyRateValue = 0.0;
+        double mostemptyRateValue = 0.0;
         int mostEmptyRateIndex = 0;
-        Double emptyRateValue = 0.0;
+        double emptyRateValue = 0.0;
         int emptyValue = 0;
         for (int index = 0; index < parkingLots.size(); index++) {
+            //todo 封装进lot
             emptyValue = parkingLots.get(index).getCapacity() - parkingLots.get(index).getCarTickets().size();
             emptyRateValue = (double) (emptyValue / parkingLots.get(index).getCapacity());
             if (emptyRateValue > mostemptyRateValue) {

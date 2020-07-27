@@ -4,9 +4,9 @@ package com.oocl.cultivation.test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParkingLot {
+public class ParkingLot{
 
-    private List<CarTicket> carTickets = new ArrayList<CarTicket>();
+    private final List<CarTicket> carTickets = new ArrayList<CarTicket>();
 
     private Integer capacity;
 
@@ -36,10 +36,6 @@ public class ParkingLot {
 
     public List<CarTicket> getCarTickets() {
         return carTickets;
-    }
-
-    public void setCarTickets(List<CarTicket> carTickets) {
-        this.carTickets = carTickets;
     }
 
     public Integer getCapacity() {

@@ -3,12 +3,16 @@ package com.oocl.cultivation.test;
 
 import java.util.List;
 
-public class ParkingBoy {
+public class ParkingBoy implements ParkingStrategy {
 
     protected List<ParkingLot> parkingLots;
 
     public ParkingBoy(List<ParkingLot> parkingLots) {
         this.parkingLots = parkingLots;
+    }
+
+    public ParkingBoy() {
+
     }
 
     public ParkResult park(Car car) {
@@ -20,6 +24,7 @@ public class ParkingBoy {
         return new ParkResult(carTicket, carTicket == null ? "Not enough position." : null);
     }
 
+    // todo fengzhuang
     public FetchResult fetch(CarTicket carTicket) {
         if (carTicket == null) return new FetchResult(null, "Please provide your parking ticket.");
         Car car = null;
@@ -30,7 +35,7 @@ public class ParkingBoy {
         }
         return new FetchResult(car, null);
     }
-
+// todo
     public String queried(CarTicket carTicket) {
         if (carTicket.getUsed()) return "Unrecognized parking ticket.";
         return null;
